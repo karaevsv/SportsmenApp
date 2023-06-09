@@ -8,9 +8,12 @@
     <Label Content="Имя:" HorizontalAlignment="Right" />
     <TextBox Name="NameTb" Width="120" Text="{Binding Name}"/>
     <Label Content="Пол:" HorizontalAlignment="Right"/>
-    <ComboBox Name="GenderCb" Width="120">
-      <ComboBoxItem Content="Мужской"/>
-      <ComboBoxItem Content="Женский"/>
+    <ComboBox Name="GenderCb" Width="120" SelectedItem="{Binding Gender}">
+      <ComboBox.ItemTemplate>
+        <DataTemplate>
+          <TextBlock Text="{Binding Name}"/>
+        </DataTemplate>
+      </ComboBox.ItemTemplate>
     </ComboBox>
     <Label Content="Дата рождения:" HorizontalAlignment="Right"/>
     <CalendarDatePicker Name="BirthDateCdp" Width="120" SelectedDate="{Binding

@@ -15,7 +15,7 @@
               Margin="5" IsReadOnly="True">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
-        <DataGridTextColumn Header="Пол" Binding="{Binding Gender}"/>
+        <DataGridTextColumn Header="Пол" Binding="{Binding Gender.Name}"/>
         <DataGridTextColumn Header="Дата рождения" Binding="{Binding BirthDate, StringFormat={}{0:dd.MM.yyyy}}"/>
       </DataGrid.Columns>
     </DataGrid>

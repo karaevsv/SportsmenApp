@@ -12,6 +12,7 @@ namespace SportApp.Pages
         public SportsmanEdit(Sportsman sportsman)
         {
             InitializeComponent();
+            GenderCb.Items = DataStorage.Gender;
             if (sportsman == null)
             {
                 DataContext = new Sportsman();
@@ -21,13 +22,12 @@ namespace SportApp.Pages
             {
                 isAdd = false;
                 DataContext = sportsman;
-                GenderCb.SelectedIndex = (sportsman.Gender == "Мужской") ? 0 : 1;
             }
         }
 
         public SportsmanEdit()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
         private void okBtnClick(object? sender, RoutedEventArgs args)
@@ -41,7 +41,6 @@ namespace SportApp.Pages
             try
             {
                 var sportsman = (Sportsman)DataContext;
-                sportsman.Gender = ((ComboBoxItem)GenderCb.SelectedItem).Content.ToString();
                 if (isAdd)
                 {
                     DataStorage.Sportsmen.Add(sportsman);

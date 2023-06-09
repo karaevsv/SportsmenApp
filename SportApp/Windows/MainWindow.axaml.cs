@@ -21,13 +21,13 @@ namespace SportApp
             DataStorage.Sportsmen.Add(new Sportsman()
             {
                 BirthDate = DateTime.Parse("13.04.1992"),
-                Gender = "Женский",
+                Gender = DataStorage.Gender[1],
                 Name = "Иванова"
             });
             DataStorage.Sportsmen.Add(new Sportsman()
             {
                 BirthDate = DateTime.Parse("24.12.2003"),
-                Gender = "Мужской",
+                Gender = DataStorage.Gender[0],
                 Name = "Иванов"
             });
         }

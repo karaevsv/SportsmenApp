@@ -10,7 +10,7 @@ namespace SportApp.Classes
     {
         public int Id { get; }
         public string Name { get; set; } = "";
-        public string Gender { get; set; } = "";
+        public Gender Gender { get; set; } = DataStorage.Gender[0];
         public DateTime BirthDate { get; set; } = DateTime.Now;
 
         public Sportsman()
