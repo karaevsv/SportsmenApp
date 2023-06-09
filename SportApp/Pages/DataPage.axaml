@@ -6,6 +6,10 @@
              x:Class="SportApp.Pages.DataPage" Tag="Тренеры и спортсмены">
   <Grid ColumnDefinitions="*, *" RowDefinitions="50, 40, *, 50">
     <Button Name="BackBtn" Content="Назад" Click="backBtnClick"/>
+    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+      <Label Content="Поиск:"/>
+      <TextBox Name="SearchTb" KeyUp="searchTbKeyUp"/>
+    </StackPanel>
     <Label Grid.Row="1" Content="Спортсмены" HorizontalAlignment="Center"/>
     <DataGrid Grid.Row="2" Name="SportsmanDG" BorderThickness="1" BorderBrush="Black"
               Margin="5" IsReadOnly="True">

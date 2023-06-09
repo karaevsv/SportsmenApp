@@ -3,6 +3,7 @@ using Avalonia.Interactivity;
 using Avalonia.Skia.Helpers;
 using MessageBox.Avalonia;
 using SportApp.Classes;
+using System.Collections.Generic;
 
 namespace SportApp.Pages
 {
@@ -14,9 +15,31 @@ namespace SportApp.Pages
             loadData();
         }
 
+        private void searchTbKeyUp(object? sender, Avalonia.Input.KeyEventArgs e)
+        {
+            loadData();
+        }
+
         private void loadData()
         {
-            SportsmanDG.Items = DataStorage.Sportsmen;
+            if (string.IsNullOrEmpty(SearchTb.Text))
+            {
+                SportsmanDG.Items = DataStorage.Sportsmen;
+            }
+            else
+            {
+                var filteredSportsmen = new List<Sportsman>();
+                foreach (var el in DataStorage.Sportsmen)
+                {
+                    if (el.Name.Contains(SearchTb.Text))
+                    {
+                        filteredSportsmen.Add(el);
+                    }
+                }
+                SportsmanDG.Items = filteredSportsmen;
+            }
+            
+            
         }
 
         private void backBtnClick(object? sender, RoutedEventArgs args)
