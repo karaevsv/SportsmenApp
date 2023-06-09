@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SportApp.Pages.SportsmanEdit">
+  <UniformGrid Columns="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Label Content="Имя:" HorizontalAlignment="Right" />
+    <TextBox Name="NameTb" Width="120" Text="{Binding Name}"/>
+    <Label Content="Пол:" HorizontalAlignment="Right"/>
+    <ComboBox Name="GenderCb" Width="120">
+      <ComboBoxItem Content="Мужской"/>
+      <ComboBoxItem Content="Женский"/>
+    </ComboBox>
+    <Label Content="Дата рождения:" HorizontalAlignment="Right"/>
+    <CalendarDatePicker Name="BirthDateCdp" Width="120" SelectedDate="{Binding
+                        BirthDate}"/>
+    <Button Name="OkBtn" Content="OK" Click="okBtnClick"/>
+    <Button Name="BackBtn" Content="Назад" Click="backBtnClick"/>
+  </UniformGrid>
+</UserControl>

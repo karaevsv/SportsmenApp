@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SportApp.MainWindow" MinHeight="450" MinWidth="800" Width="800" Height="450"
+        Title="Тренеры и спортсмены">
+  <Grid RowDefinitions="50, *" ColumnDefinitions="100, *, 100">
+    <Image Grid.Column="0" Source="/Assets/logo.jpg"
+           HorizontalAlignment="Center" VerticalAlignment="Center"
+           Margin="5"/>
+    <Label Grid.Column="1" Content="{Binding Content.Tag, ElementName=MainFrame}"
+           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Button Grid.Column="2" Name="ExitBtn"
+            Content="Выход" Click="exitBtnClick" Background="Orange"/>
+    <ContentControl Grid.ColumnSpan="3" Grid.Row="1" Name="MainFrame"/>
+  </Grid>
+</Window>
